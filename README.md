@@ -1,5 +1,5 @@
 # Web application
-Functional site of the airline, implemented on AngularJS.
+Functional site of the airline, implemented on AngularJS.<br>
 Registration (addition) of passengers on any of the flights to choose from.
 
 ## Unauthorized users can
