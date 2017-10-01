@@ -2,7 +2,7 @@ var app = angular.module("app", ["dndLists"]);
 
 app.controller("ctrl", function ($scope, $http){
        
-    localStorage.clear();
+    //localStorage.clear();
     if(localStorage.getItem('json') == null){
         //get JSON file by dint of $http
         $http.get('tasks.json').success(function(result){
