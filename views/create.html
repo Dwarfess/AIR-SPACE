@@ -1,0 +1,12 @@
+
+<div class="panel-body edit">
+    <form name = "createFlight" novalidate>
+        <div class="form-group">
+            <label>Name:</label>
+            <input class="form-control" ng-model="currentItem.title" required/>
+        </div>
+
+        <button class="btn btn-default" ng-disabled="createFlight.$invalid" ng-click = "saveFlight(currentItem)">Save</button> 
+        <button class="btn btn-default" ng-click="cancelEdit(null, 'edit')">Cancel</button>
+    </form>
+</div>

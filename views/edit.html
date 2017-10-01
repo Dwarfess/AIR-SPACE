@@ -1,0 +1,33 @@
+
+<div class="panel-body edit">
+    <form name = "createPass" novalidate>
+        <div class="form-group">
+            <label>Name: *</label>
+            <input class="form-control" ng-model="currentItem.name" required/>
+        </div>
+        <div class="form-group" ng-show = "showFlights">
+            <label>Plane: *</label>
+            <select ng-model="planes" class="form-control" ng-options="plane.title for plane in json"><option value = "">-- choose plane --</option></select>
+        </div>
+        <div class="form-group">
+            <label>Price:</label>
+            <input class="form-control" ng-model="currentItem.price" />
+        </div>
+        <div class="form-group">
+            <label>Due_date: *</label>
+            <input class="form-control" ng-model="currentItem.due_date" required/>
+        </div>
+        <div class="form-group">
+            <label>Description:</label>
+            <textarea class="form-control" ng-model="currentItem.description">
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label>Image:</label>
+            <input class="form-control" ng-model="currentItem.image" />
+        </div>
+
+        <button class="btn btn-default" ng-disabled="createPass.$invalid" ng-click="saveEdit(currentItem, planes)">Save</button> 
+        <button class="btn btn-default" ng-click="cancelEdit(null, 'edit')">Cancel</button>
+    </form>
+</div>

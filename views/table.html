@@ -1,0 +1,34 @@
+<div class = "groups">
+    <div class="panel-body panel group simpleDemo"  ng-repeat = "list in json track by $index">
+        <input type="button" class = "btn" value = "✖" ng-hide = "online.logged" ng-click = "deleteCategory($index)">
+        <h4><i class="fa fa-plane" aria-hidden="true"></i> {{list.title}}</h4>
+        <ul dnd-list="list.tasks" 
+            dnd-dragover="dragover(index, external, type, callback)">
+
+            <li ng-repeat="item in list.tasks"
+                dnd-draggable="item"
+                dnd-moved="list.tasks.splice($index, 1); saveJson();"
+                dnd-effect-allowed="move"
+                class="item panel"
+                ng-click = "show(item)">
+                    <input type="button" class = "btn" value = "✖" ng-hide = "online.logged" ng-click = "deleteElement(item)">
+                    <p>{{item.name}}</p>
+                    <p>Due-date: <span>{{item.due_date| date:"MM.dd.yyyy"}}</span></p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+                <!--functions authorized users-->
+<div class="container" ng-hide = "online.logged">
+    <div class="usersFunctions">
+        <button class="btn-lg btn-default" ng-click="refresh()">Refresh <i class="fa fa-repeat" aria-hidden="true"></i>
+        </button>
+        <button class="btn-lg btn-default" ng-click="editOrCreate(null, 'table', 'create')">Create <i class="fa fa-plane" aria-hidden="true"></i>
+        </button>
+        <button class="btn-lg btn-default" ng-click="editOrCreate(null, 'table', 'edit', true)">Add <i class="fa fa-user" aria-hidden="true"></i>
+        </button>
+    </div>
+</div> 
+
+
